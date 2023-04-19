@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		28A30E4329EE8C13004C8D68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E4229EE8C13004C8D68 /* AppDelegate.swift */; };
 		28A30E4529EE8C13004C8D68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E4429EE8C13004C8D68 /* SceneDelegate.swift */; };
-		28A30E4729EE8C13004C8D68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E4629EE8C13004C8D68 /* ViewController.swift */; };
-		28A30E4A29EE8C13004C8D68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28A30E4829EE8C13004C8D68 /* Main.storyboard */; };
+		28A30E4729EE8C13004C8D68 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E4629EE8C13004C8D68 /* MainViewController.swift */; };
 		28A30E4C29EE8C15004C8D68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28A30E4B29EE8C15004C8D68 /* Assets.xcassets */; };
 		28A30E4F29EE8C15004C8D68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28A30E4D29EE8C15004C8D68 /* LaunchScreen.storyboard */; };
+		28A30E5929EFF251004C8D68 /* BookSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E5829EFF251004C8D68 /* BookSearchTextField.swift */; };
+		28A30E5F29EFFF4F004C8D68 /* JSONDecoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E5E29EFFF4F004C8D68 /* JSONDecoderManager.swift */; };
+		28A30E6129EFFFD0004C8D68 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E6029EFFFD0004C8D68 /* NetworkManager.swift */; };
+		28A30E6329F0002B004C8D68 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E6229F0002B004C8D68 /* APIManager.swift */; };
+		28A30E6529F000E9004C8D68 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E6429F000E9004C8D68 /* BookModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		28A30E3F29EE8C13004C8D68 /* BookShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A30E4229EE8C13004C8D68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28A30E4429EE8C13004C8D68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		28A30E4629EE8C13004C8D68 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		28A30E4929EE8C13004C8D68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		28A30E4629EE8C13004C8D68 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		28A30E4B29EE8C15004C8D68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28A30E4E29EE8C15004C8D68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28A30E5029EE8C15004C8D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28A30E5829EFF251004C8D68 /* BookSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchTextField.swift; sourceTree = "<group>"; };
+		28A30E5E29EFFF4F004C8D68 /* JSONDecoderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderManager.swift; sourceTree = "<group>"; };
+		28A30E6029EFFFD0004C8D68 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		28A30E6229F0002B004C8D68 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		28A30E6429F000E9004C8D68 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,59 @@
 		28A30E4129EE8C13004C8D68 /* BookShelf */ = {
 			isa = PBXGroup;
 			children = (
-				28A30E4229EE8C13004C8D68 /* AppDelegate.swift */,
-				28A30E4429EE8C13004C8D68 /* SceneDelegate.swift */,
-				28A30E4629EE8C13004C8D68 /* ViewController.swift */,
-				28A30E4829EE8C13004C8D68 /* Main.storyboard */,
+				28A30E5C29EFFEE0004C8D68 /* App */,
+				28A30E5D29EFFEF8004C8D68 /* Network */,
+				28A30E6629F000F4004C8D68 /* Models */,
+				28A30E5B29EFFECB004C8D68 /* Views */,
+				28A30E5A29EFFEB5004C8D68 /* Controllers */,
 				28A30E4B29EE8C15004C8D68 /* Assets.xcassets */,
-				28A30E4D29EE8C15004C8D68 /* LaunchScreen.storyboard */,
 				28A30E5029EE8C15004C8D68 /* Info.plist */,
 			);
 			path = BookShelf;
+			sourceTree = "<group>";
+		};
+		28A30E5A29EFFEB5004C8D68 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				28A30E4629EE8C13004C8D68 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		28A30E5B29EFFECB004C8D68 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				28A30E5829EFF251004C8D68 /* BookSearchTextField.swift */,
+				28A30E4D29EE8C15004C8D68 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		28A30E5C29EFFEE0004C8D68 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				28A30E4229EE8C13004C8D68 /* AppDelegate.swift */,
+				28A30E4429EE8C13004C8D68 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		28A30E5D29EFFEF8004C8D68 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				28A30E5E29EFFF4F004C8D68 /* JSONDecoderManager.swift */,
+				28A30E6029EFFFD0004C8D68 /* NetworkManager.swift */,
+				28A30E6229F0002B004C8D68 /* APIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		28A30E6629F000F4004C8D68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				28A30E6429F000E9004C8D68 /* BookModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +179,6 @@
 			files = (
 				28A30E4F29EE8C15004C8D68 /* LaunchScreen.storyboard in Resources */,
 				28A30E4C29EE8C15004C8D68 /* Assets.xcassets in Resources */,
-				28A30E4A29EE8C13004C8D68 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +189,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28A30E4729EE8C13004C8D68 /* ViewController.swift in Sources */,
+				28A30E6129EFFFD0004C8D68 /* NetworkManager.swift in Sources */,
+				28A30E4729EE8C13004C8D68 /* MainViewController.swift in Sources */,
 				28A30E4329EE8C13004C8D68 /* AppDelegate.swift in Sources */,
+				28A30E5F29EFFF4F004C8D68 /* JSONDecoderManager.swift in Sources */,
 				28A30E4529EE8C13004C8D68 /* SceneDelegate.swift in Sources */,
+				28A30E5929EFF251004C8D68 /* BookSearchTextField.swift in Sources */,
+				28A30E6529F000E9004C8D68 /* BookModel.swift in Sources */,
+				28A30E6329F0002B004C8D68 /* APIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		28A30E4829EE8C13004C8D68 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				28A30E4929EE8C13004C8D68 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		28A30E4D29EE8C15004C8D68 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,9 +340,9 @@
 				INFOPLIST_FILE = BookShelf/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +350,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Saf.BookShelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -320,9 +371,9 @@
 				INFOPLIST_FILE = BookShelf/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +381,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Saf.BookShelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
