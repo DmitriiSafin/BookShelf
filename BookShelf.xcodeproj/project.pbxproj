@@ -18,6 +18,8 @@
 		28A30E6329F0002B004C8D68 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E6229F0002B004C8D68 /* APIManager.swift */; };
 		28A30E6529F000E9004C8D68 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E6429F000E9004C8D68 /* BookModel.swift */; };
 		28A30E6A29F01F01004C8D68 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E6929F01F01004C8D68 /* BookTableViewCell.swift */; };
+		28A30E6D29F028A7004C8D68 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 28A30E6C29F028A7004C8D68 /* SDWebImage */; };
+		28A30E6F29F03D46004C8D68 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E6E29F03D46004C8D68 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,7 @@
 		28A30E6229F0002B004C8D68 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		28A30E6429F000E9004C8D68 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		28A30E6929F01F01004C8D68 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		28A30E6E29F03D46004C8D68 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28A30E6D29F028A7004C8D68 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				28A30E4629EE8C13004C8D68 /* MainViewController.swift */,
+				28A30E6E29F03D46004C8D68 /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -138,6 +143,9 @@
 			dependencies = (
 			);
 			name = BookShelf;
+			packageProductDependencies = (
+				28A30E6C29F028A7004C8D68 /* SDWebImage */,
+			);
 			productName = BookShelf;
 			productReference = 28A30E3F29EE8C13004C8D68 /* BookShelf.app */;
 			productType = "com.apple.product-type.application";
@@ -166,6 +174,9 @@
 				Base,
 			);
 			mainGroup = 28A30E3629EE8C12004C8D68;
+			packageReferences = (
+				28A30E6B29F028A7004C8D68 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 28A30E4029EE8C13004C8D68 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -199,6 +210,7 @@
 				28A30E6A29F01F01004C8D68 /* BookTableViewCell.swift in Sources */,
 				28A30E4529EE8C13004C8D68 /* SceneDelegate.swift in Sources */,
 				28A30E5929EFF251004C8D68 /* BookSearchTextField.swift in Sources */,
+				28A30E6F29F03D46004C8D68 /* DetailViewController.swift in Sources */,
 				28A30E6529F000E9004C8D68 /* BookModel.swift in Sources */,
 				28A30E6329F0002B004C8D68 /* APIManager.swift in Sources */,
 			);
@@ -416,6 +428,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		28A30E6B29F028A7004C8D68 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		28A30E6C29F028A7004C8D68 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 28A30E6B29F028A7004C8D68 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 28A30E3729EE8C12004C8D68 /* Project object */;
 }
