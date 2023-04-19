@@ -14,15 +14,19 @@ final class MainViewController: UIViewController {
     private let searchTextField = BookSearchTextField()
     
     //MARK: - Properties
-    private var model: [String] = []
+    private let apiManager = ApiManager(
+        networkManager: NetworkManager(jsonService: JSONDecoderManager()))
+    private var books: [BookModel] = []
     
     //MARK: - Initializers
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         searchTextField.delegate = self
+        searchTextField.searchFieldDelegate = self
         setupTableView()
         setupUI()
+        tapGesture()
     }
     
     //MARK: - Private Methodes
@@ -32,20 +36,39 @@ final class MainViewController: UIViewController {
         view.addSubview(tableView)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
+    
+    private func tapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(view.endEditing))
+        view.addGestureRecognizer(tapGesture)
+    }
 
+    //MARK: - Network Methodes
+    private func fetchSearchBooks(with title: String) {
+        books = []
+        Task {
+            do {
+                books = try await apiManager.fetchBooks(title: title).docs
+                await MainActor.run(body: {
+                    tableView.reloadData()
+                })
+            } catch {
+                alertError(title: "Error", message: error.localizedDescription)
+            }
+        }
+    }
 }
 
 //MARK: - UITableViewDelegate
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10 //model.count
+        return books.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        cell.textLabel?.text = "\(indexPath.row)"
+        cell.textLabel?.text = books[indexPath.row].title
         
         return cell
     }
@@ -61,7 +84,14 @@ extension MainViewController: BookSearchTextFieldDelegate {
 
 //MARK: - UITextFieldDelegate
 extension MainViewController: UITextFieldDelegate {
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard var book = textField.text, book.count != 0 else { return true }
+        book = book.lowercased().replacingOccurrences(of: " ", with: "+")
+        fetchSearchBooks(with: book)
+        textField.text = ""
+        textField.endEditing(true)
+        return true
+    }
 }
 
 //MARK: - SetupUI
@@ -83,7 +113,17 @@ extension MainViewController {
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-            
         ])
+    }
+}
+
+//MARK: - AlertController
+extension MainViewController {
+
+    private func alertError(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(alertAction)
+        present(alert, animated: true)
     }
 }

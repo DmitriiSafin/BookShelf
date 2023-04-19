@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ApiManagerProtocol {
-    func fetchBooks(title: String) async throws -> BookModel
+    func fetchBooks(title: String) async throws -> Results
 }
 
 final class ApiManager {
@@ -23,7 +23,7 @@ final class ApiManager {
 
 extension ApiManager: ApiManagerProtocol {
     
-    func fetchBooks(title: String) async throws -> BookModel {
+    func fetchBooks(title: String) async throws -> Results {
         let urlString = "https://openlibrary.org/search.json?title=\(title)"
         return try await networkManager.request(urlString: urlString)
     }

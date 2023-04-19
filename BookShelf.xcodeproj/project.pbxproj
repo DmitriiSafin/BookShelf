@@ -17,6 +17,7 @@
 		28A30E6129EFFFD0004C8D68 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E6029EFFFD0004C8D68 /* NetworkManager.swift */; };
 		28A30E6329F0002B004C8D68 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E6229F0002B004C8D68 /* APIManager.swift */; };
 		28A30E6529F000E9004C8D68 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E6429F000E9004C8D68 /* BookModel.swift */; };
+		28A30E6A29F01F01004C8D68 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E6929F01F01004C8D68 /* BookTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		28A30E6029EFFFD0004C8D68 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		28A30E6229F0002B004C8D68 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		28A30E6429F000E9004C8D68 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		28A30E6929F01F01004C8D68 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				28A30E5829EFF251004C8D68 /* BookSearchTextField.swift */,
+				28A30E6929F01F01004C8D68 /* BookTableViewCell.swift */,
 				28A30E4D29EE8C15004C8D68 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -193,6 +196,7 @@
 				28A30E4729EE8C13004C8D68 /* MainViewController.swift in Sources */,
 				28A30E4329EE8C13004C8D68 /* AppDelegate.swift in Sources */,
 				28A30E5F29EFFF4F004C8D68 /* JSONDecoderManager.swift in Sources */,
+				28A30E6A29F01F01004C8D68 /* BookTableViewCell.swift in Sources */,
 				28A30E4529EE8C13004C8D68 /* SceneDelegate.swift in Sources */,
 				28A30E5929EFF251004C8D68 /* BookSearchTextField.swift in Sources */,
 				28A30E6529F000E9004C8D68 /* BookModel.swift in Sources */,
