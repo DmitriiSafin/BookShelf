@@ -59,7 +59,7 @@ class BookTableViewCell: UITableViewCell {
             let urlString = "https://covers.openlibrary.org/b/OLID/\(image)-M.jpg"
             bookImageView.sd_setImage(with: URL(string: urlString))
         } else {
-            bookImageView.image = UIImage(systemName: "photo.circle")
+            bookImageView.image = UIImage(named: "book")
         }
         
         bookNameLabel.text = model.title

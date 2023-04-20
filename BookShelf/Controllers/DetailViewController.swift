@@ -56,12 +56,8 @@ class DetailViewController: UIViewController {
         label.numberOfLines = 2
         return label
     }()
-    
-    //MARK: - Properties
-    private var url: URL?
 
     //MARK: - Initializers
-    
     init(imageBook: String?, nameBook: String?, rating: Double?, storyBook: String?, dateBook: Int?) {
         self.bookNameLabel.text = nameBook
         self.textView.text = storyBook
@@ -94,7 +90,7 @@ class DetailViewController: UIViewController {
             let urlString = "https://covers.openlibrary.org/b/OLID/\(image)-L.jpg"
             bookImageView.sd_setImage(with: URL(string: urlString))
         } else {
-            bookImageView.image = UIImage(systemName: "photo.circle")
+            bookImageView.image = UIImage(named: "book")
         }
     }
     
