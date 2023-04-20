@@ -15,11 +15,16 @@ final class MainViewController: UIViewController {
     private let activityIndicator = UIActivityIndicatorView()
     
     //MARK: - Properties
+    
+    private lazy var tapGesture: UITapGestureRecognizer = {
+        return UITapGestureRecognizer(target: view, action: #selector(view.endEditing))
+    }()
+    
     private let apiManager = ApiManager(
         networkManager: NetworkManager(jsonService: JSONDecoderManager()))
     private var books: [BookModel] = []
     
-    //MARK: - Initializers
+    //MARK: - Override Methodes
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -27,7 +32,6 @@ final class MainViewController: UIViewController {
         searchTextField.searchFieldDelegate = self
         setupTableView()
         setupUI()
-        tapGesture()
     }
     
     //MARK: - Private Methodes
@@ -37,11 +41,6 @@ final class MainViewController: UIViewController {
         view.addSubview(tableView)
         tableView.register(BookTableViewCell.self, forCellReuseIdentifier: "Cell")
     }
-    
-    private func tapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(view.endEditing))
-        view.addGestureRecognizer(tapGesture)
-    }
 
     //MARK: - Network Methodes
     private func fetchSearchBooks(with title: String) {
@@ -50,17 +49,19 @@ final class MainViewController: UIViewController {
                 books = try await apiManager.fetchBooks(title: title).docs
                 await MainActor.run(body: {
                     activityIndicator.stopAnimating()
+                    tableView.allowsSelection = true
                     tableView.reloadData()
                 })
             } catch {
                 activityIndicator.stopAnimating()
+                tableView.allowsSelection = true
                 alertError(title: "Error", message: error.localizedDescription)
             }
         }
     }
 }
 
-//MARK: - UITableViewDelegate
+//MARK: - UITableViewDelegate, UITableViewDataSource
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,6 +79,19 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 170
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let book = books[indexPath.row]
+        var storyBook = "There is no description"
+        if let story = book.firstSentence, !story.isEmpty {
+            storyBook = story[0]
+        }
+        let detailVC = DetailViewController(imageBook: book.image, nameBook: book.title, rating: book.ratingsAverage, storyBook: storyBook, dateBook: book.firstPublishYear)
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
+    }
 }
 
 //MARK: - Book Search TextFieldDelegate
@@ -94,10 +108,19 @@ extension MainViewController: UITextFieldDelegate {
         guard var book = textField.text, book.count != 0 else { return true }
         book = book.lowercased().replacingOccurrences(of: " ", with: "+")
         activityIndicator.startAnimating()
+        tableView.allowsSelection = false
         fetchSearchBooks(with: book)
         textField.text = ""
         textField.endEditing(true)
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        view.removeGestureRecognizer(tapGesture)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        view.addGestureRecognizer(tapGesture)
     }
 }
 
