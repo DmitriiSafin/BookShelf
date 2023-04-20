@@ -20,6 +20,10 @@
 		28A30E6A29F01F01004C8D68 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E6929F01F01004C8D68 /* BookTableViewCell.swift */; };
 		28A30E6D29F028A7004C8D68 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 28A30E6C29F028A7004C8D68 /* SDWebImage */; };
 		28A30E6F29F03D46004C8D68 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A30E6E29F03D46004C8D68 /* DetailViewController.swift */; };
+		28A30E7229F14B60004C8D68 /* screen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 28A30E7129F14B60004C8D68 /* screen1.png */; };
+		28A30E7429F14B67004C8D68 /* screen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 28A30E7329F14B67004C8D68 /* screen2.png */; };
+		28A30E7629F14B6C004C8D68 /* appWork.gif in Resources */ = {isa = PBXBuildFile; fileRef = 28A30E7529F14B6C004C8D68 /* appWork.gif */; };
+		28A30E7829F14B98004C8D68 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 28A30E7729F14B98004C8D68 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		28A30E6429F000E9004C8D68 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		28A30E6929F01F01004C8D68 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		28A30E6E29F03D46004C8D68 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		28A30E7129F14B60004C8D68 /* screen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen1.png; sourceTree = "<group>"; };
+		28A30E7329F14B67004C8D68 /* screen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen2.png; sourceTree = "<group>"; };
+		28A30E7529F14B6C004C8D68 /* appWork.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = appWork.gif; sourceTree = "<group>"; };
+		28A30E7729F14B98004C8D68 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,8 @@
 		28A30E3629EE8C12004C8D68 = {
 			isa = PBXGroup;
 			children = (
+				28A30E7729F14B98004C8D68 /* README.md */,
+				28A30E7029F1496E004C8D68 /* ReadmeResources */,
 				28A30E4129EE8C13004C8D68 /* BookShelf */,
 				28A30E4029EE8C13004C8D68 /* Products */,
 			);
@@ -127,6 +137,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		28A30E7029F1496E004C8D68 /* ReadmeResources */ = {
+			isa = PBXGroup;
+			children = (
+				28A30E7129F14B60004C8D68 /* screen1.png */,
+				28A30E7329F14B67004C8D68 /* screen2.png */,
+				28A30E7529F14B6C004C8D68 /* appWork.gif */,
+			);
+			path = ReadmeResources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -191,7 +211,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28A30E7829F14B98004C8D68 /* README.md in Resources */,
+				28A30E7429F14B67004C8D68 /* screen2.png in Resources */,
 				28A30E4F29EE8C15004C8D68 /* LaunchScreen.storyboard in Resources */,
+				28A30E7229F14B60004C8D68 /* screen1.png in Resources */,
+				28A30E7629F14B6C004C8D68 /* appWork.gif in Resources */,
 				28A30E4C29EE8C15004C8D68 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

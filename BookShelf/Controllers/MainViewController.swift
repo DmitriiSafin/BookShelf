@@ -27,7 +27,6 @@ final class MainViewController: UIViewController {
     //MARK: - Override Methodes
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
         searchTextField.delegate = self
         searchTextField.searchFieldDelegate = self
         setupTableView()
@@ -128,6 +127,9 @@ extension MainViewController: UITextFieldDelegate {
 extension MainViewController {
     
     private func setupUI() {
+        view.backgroundColor = .systemBackground
+        title = "List of books"
+
         let views = [searchTextField, tableView, activityIndicator]
         views.forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false

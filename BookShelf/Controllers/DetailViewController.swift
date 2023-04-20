@@ -73,7 +73,6 @@ class DetailViewController: UIViewController {
     //MARK: - Override Methodes
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
         setupUI()
     }
     
@@ -91,6 +90,12 @@ class DetailViewController: UIViewController {
             bookImageView.sd_setImage(with: URL(string: urlString))
         } else {
             bookImageView.image = UIImage(named: "book")
+        }
+    }
+    
+    @objc private func didTapBack() {
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -143,6 +148,15 @@ class DetailViewController: UIViewController {
 extension DetailViewController {
     
     private func setupUI() {
+        
+        view.backgroundColor = .systemBackground
+        title = "Book Detail"
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "back-button-icon"),
+            style: .done, target: self, action: #selector(didTapBack)
+        )
+        
         mainScrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(mainScrollView)
         
